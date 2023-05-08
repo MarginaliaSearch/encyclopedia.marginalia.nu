@@ -1,0 +1,128 @@
+:root {
+  --bg: #f8f8ee;
+  --fg: #222;
+  --fg-muted: #444;
+  --link-fg: #000;
+  --link-focus-fg: #fff;
+  --link-focus-bg: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #222;
+    --fg: #ccc;
+    --fg-muted: #888;
+    --link-fg: #fff;
+    --link-focus-fg: #000;
+    --link-focus-bg: #fff;
+  }
+}
+
+body {
+  font-family: 'Tahoma', sans-serif;
+  line-height: 1.5;
+
+
+  color: var(--fg);
+  background-color: var(--bg);
+  font-size: 12pt;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: serif;
+}
+pre {
+    overflow: auto;
+    max-width: 60ch;
+}
+.table-container {
+    overflow: auto;
+    max-width: 60ch;
+}
+#body > h1 {
+  font-size: 32pt;
+
+  hyphens: auto;
+}
+
+p {
+    hyphens: auto;
+    text-align: justify;
+}
+
+a {
+  color: var(--link-fg);
+  text-decoration: underline;
+}
+
+a:hover, a:focus {
+  color: var(--link-focus-fg);
+  background-color: var(--link-focus-bg) !important;
+}
+
+footer {
+  margin-top: 2ch;
+  color: var(--fg-muted);
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article.article {
+  max-width: 122ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1ch;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 2ch;
+}
+
+article.listing {
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+#side {
+  margin-top: 2rem;
+}
+
+@media (min-width: 1700px) {
+
+    #side #links > a {
+      margin-right: -22ch;
+      width: 20ch;
+      float: right;
+    }
+
+    #body div > h2.side, #body div > h3, #body div > h4 {
+      font-family: sans-serif;
+      margin-top: 0px;
+      font-weight: normal;
+      text-align: left;
+      font-size: 12pt;
+      margin-left: -20ch;
+      width: 18ch;
+      padding-right: 2ch;
+      float: left;
+    }
+}
+
+@media (max-width: 1024px) {
+  article.article {
+    display: block;
+  }
+
+  #side {
+   margin-top: unset;
+  }
+}

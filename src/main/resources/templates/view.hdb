@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{article.title}}</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<article class="article">
+  <section id="body">
+    <h1>{{article.title}}</h1>
+    {{{article.articleHtml}}}
+  </section>
+  <section id="side">
+{{>part-view-adjacent}}
+{{#if disambiguated}}{{>part-view-disambiguated}}{{/if}}
+{{#if linked}}{{>part-view-linked}}{{/if}}
+  </section>
+</article>
+{{>footer}}
+</body>
+</html>

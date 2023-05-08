@@ -1,0 +1,8 @@
+<div id="links">
+<h2>Related Articles</h2>
+{{#each linked}}
+<a href="{{url}}">{{title}}</a>
+{{{summary}}}
+{{#unless summary}}<p/>{{/unless}}
+{{/each}}
+</div>

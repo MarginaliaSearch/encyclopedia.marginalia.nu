@@ -1,0 +1,17 @@
+<div id="links">
+<h2>Search</h2>
+<form action="/search" method="get">
+    <input type="text" name="q" placeholder="Search" value="{{searchTerm}}">
+    <input type="submit" value="Search">
+</form>
+<h2>Index</h2>
+    <ul>
+{{#each prevN}}
+    <li><a href="/article/{{url}}">{{title}}</a></li>
+{{/each}}
+    <li><b>{{article.title}}</b></li>
+{{#each nextN}}
+    <li><a href="/article/{{url}}">{{title}}</a></li>
+{{/each}}
+    </ul>
+</div>

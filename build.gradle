@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'application'
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.0"
+}
+
+group 'nu.marginalia'
+version '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'nu.marginalia.encyclopedia.MainSelector'
+    applicationName = 'encyclopedia'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+dependencies {
+    implementation libs.jsoup
+    implementation libs.commons.lang3
+    implementation libs.lombok
+    annotationProcessor libs.lombok
+    implementation libs.notnull
+    implementation libs.spark
+    implementation libs.sqlite
+    implementation libs.zstd
+    implementation libs.fastutil
+    implementation libs.commons.collections4
+    implementation libs.bundles.gson
+    implementation libs.bundles.slf4j
+    implementation libs.bundles.handlebars
+
+    implementation project(':third-party:openzim')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+idea {
+    module {
+        excludeDirs.add(file("$projectDir/data"))
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+}

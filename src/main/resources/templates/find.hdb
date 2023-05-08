@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Find Articles: {{searchTerm}}</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<article class="listing">
+  <h1>Search</h1>
+  <form action="/search" method="get">
+    <input type="text" name="q" placeholder="Search" value="{{searchTerm}}">
+    <input type="submit" value="Search">
+  </form>
+<ul>
+  {{#each articles}}
+    <h3><a href="/article/{{url}}">{{title}}</a></h3>
+    {{{summary}}}
+  {{/each}}
+
+  {{#if nextPrefix}}
+    <a href="?start={{nextPrefix}}">Next</a>
+  {{/if}}
+</ul>
+</article>
+{{>footer}}
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Encyclopedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<article class="article">
+    <section id="body">
+        <h1>Encyclopedia</h1>
+        <div>
+        <p>
+            This is a what-if experiment in web design: What if we designed web-sites according to
+            print principles, an experiment in web design, a high-readability, low-distraction encyclopedia
+            with design choices such as narrow column widths, high line-spacing and a consistent typeface.
+        </p>
+        <p>It is mostly for my own personal use, but you are very welcome to explore
+            as well.</p>
+        <p>
+            The experience is primarily designed for full-screen use on desktop computers.
+            It will work on mobile devices as well, tablets better than phones, but only just.
+        </p>
+        <h2 class="side">Justification</h2>
+        <p>
+            I struggle reading long texts the Internet. I find myself constantly distracted by
+            links and other visual clutter, and my attention is constantly drawn left
+            and right. I find myself skimming and skipping parts of the text. This is
+            obviously deleterious for reading comprehension.
+        </p>
+        <p>
+            Websites like Wikipedia are very fond of inline-links, which are visually obtrusive,
+            and draw the eyes of the reader away from the text, encouraging skipping sections
+            and hopping back and forth in the text in an undirected manner.
+        </p>
+        <p>The notion that the attention span of readers is dwindling is popular in web-design
+            circles, but unfortunately, the solution to this is often to make everything even
+            more attention grabbing. This seems counter-productive, as it's the same things
+            that grabs attention that also steals away attention. The result is that it's even
+            harder to focus.
+        </p>
+        <p>
+            Based on the observation that I have much less trouble reading printed text,
+            I've tried to emulate the design principles of print on this web-based encyclopedia.
+        </p>
+        <p>
+            I've tried to design this encyclopedia to be as non-distracting as possible.
+            Most inline links are moved out of the text. You're expected to read the
+            body of the text first before advancing to other articles. Most citations are also
+            removed. For citations, the main Wikipedia project is still available.
+        </p>
+        <p>
+            As an effect of machine-converting Wikipedia articles, some glitches are present.
+            In particular, some tabular data is a bit mangled.
+        </p>
+        </div>
+    </section>
+    <section id="side">
+        <h2>Search</h2>
+        <form action="/search" method="get">
+            <input type="text" name="q" placeholder="Search">
+            <input type="submit" value="Search">
+        </form>
+        <p>
+            Use this form to search for articles in the encyclopedia.
+            It's a prefix-based search, meaning that your search terms
+            are matched against the beginning of the names of articles.
+        </p>
+        <p>
+            If for example you search for <em>cat</em>, you'll get a such as
+            <ul>
+                <li>cat</li>
+                <li>catalogue</li>
+                <li>catastrophe</li>
+            </ul>
+        </p>
+        <p>
+            On a technical level, this index uses an in-memory <a href="/article/Radix_tree">PATRICIA Trie</a>.
+        </p>
+        <h2 class="side">Legal</h2>
+        <p>
+            This project uses data from the Wikipedia project, licensed under the
+            <a rel="nofollow" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">CC BY-SA 3.0</a> license.
+            The article content is from the <a href="https://dumps.wikimedia.org/" rel="nofollow">publicly available</a>
+            Kiwix/OpenZIM dumps, which typically lag behind the main Wikipedia project by up to a year.
+        </p>
+        <p>
+            The code for the encyclopedia project is open source and available on
+            <a rel="nofollow" href="https://github.com/MarginaliaSearch/MarginaliaEncyclopedia">github</a>.
+        </p>
+        <p>
+            The service itself runs off a Raspberry Pi, so depending on the amount of traffic it may sometimes
+            get a bit slow. Be patient.
+        </p>
+    </section>
+</article>
+</body>
+</html>

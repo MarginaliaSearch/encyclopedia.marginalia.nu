@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{title}}</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<article class="listing">
+<ul>
+  {{#each links}}
+    <li><a href="/article/{{.}}">{{.}}</a></li>
+  {{/each}}
+</ul>
+{{#if prev}}<a href="/list/?start={{prev}}&count={{count}}">Prev</a>{{/if}}
+<a href="/list/?start={{next}}&count={{count}}">Next</a>
+</article>
+{{>footer}}
+</body>
+</html>

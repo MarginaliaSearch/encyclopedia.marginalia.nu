@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+dependencies {
+    implementation libs.zstd
+    implementation libs.commons.compress
+
+    implementation project(':third-party:xz')
+}
+
+test {
+    useJUnitPlatform()
+}

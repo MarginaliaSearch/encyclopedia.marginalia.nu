@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Encyclopedia</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <article class="article">
@@ -58,9 +59,12 @@
     <section id="side">
         <h2>Search</h2>
         <form action="/search" method="get">
-            <input type="text" name="q" placeholder="Search">
-            <input type="submit" value="Search">
+            <div class="search-form">
+                <input type="text" name="q" placeholder="Search" value="">
+                <input type="submit" value="Search">
+            </div>
         </form>
+
         <p>
             Use this form to search for articles in the encyclopedia.
             It's a prefix-based search, meaning that your search terms

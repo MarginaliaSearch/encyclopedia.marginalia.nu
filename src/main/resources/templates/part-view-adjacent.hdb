@@ -1,8 +1,10 @@
 <div id="links">
 <h2>Search</h2>
 <form action="/search" method="get">
-    <input type="text" name="q" placeholder="Search" value="{{searchTerm}}">
-    <input type="submit" value="Search">
+    <div class="search-form">
+        <input type="text" name="q" placeholder="Search" value="{{searchTerm}}">
+        <input type="submit" value="Search">
+    </div>
 </form>
 <h2>Index</h2>
     <ul>

@@ -116,6 +116,12 @@ table {
   margin-top: 2rem;
 }
 
+@media (max-width: 1200px) {
+  p {
+    text-align: left;
+  }
+}
+
 @media (min-width: 1700px) {
 
     #side #links > a {

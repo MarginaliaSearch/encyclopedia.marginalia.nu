@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import spark.Spark;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.SQLException;
@@ -59,7 +61,7 @@ public class EncyclopediaServiceMain {
         Spark.get("/find/:url", findArticleService::handle);
 
         Spark.get("/search", (rq, rsp) -> {
-            rsp.redirect("/find/" + rq.queryParams("q"));
+            rsp.redirect("/find/" + URLEncoder.encode(rq.queryParams("q"), StandardCharsets.UTF_8));
             return "";
         });
     }

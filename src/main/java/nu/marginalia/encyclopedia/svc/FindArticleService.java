@@ -27,7 +27,7 @@ public class FindArticleService {
     }
 
     public String handle(Request request, Response response) throws IOException {
-        var url = request.params(":url");
+        var url = request.params(":url").replace('+', ' ');
         var searchKey = request.queryParamOrDefault("start", url);
 
         response.header("Content-Encoding", "gzip");

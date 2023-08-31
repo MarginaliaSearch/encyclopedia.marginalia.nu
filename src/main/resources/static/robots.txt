@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /article/
 Disallow: /find/
 Disallow: /search/
+Disallow: /wiki/

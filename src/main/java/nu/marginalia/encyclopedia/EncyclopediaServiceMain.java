@@ -57,8 +57,8 @@ public class EncyclopediaServiceMain {
         Spark.init();
 
         Spark.get("/list/", listArticleService::handle);
-        Spark.get("/article/:url", viewArticleService::handle);
-        Spark.get("/find/:url", findArticleService::handle);
+        Spark.get("/article/*", viewArticleService::handle);
+        Spark.get("/find/*", findArticleService::handle);
 
         Spark.get("/search", (rq, rsp) -> {
             rsp.redirect("/find/" + URLEncoder.encode(rq.queryParams("q"), StandardCharsets.UTF_8));

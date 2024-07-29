@@ -28,7 +28,7 @@ public class ViewArticleService {
     }
 
     public String handle(Request request, Response response) throws IOException {
-        var url = request.params(":url");
+        var url = request.splat()[0];
 
         var article = articleStore.get(url);
         var body = article

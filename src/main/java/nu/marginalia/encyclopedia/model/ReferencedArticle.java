@@ -23,6 +23,10 @@ public record ReferencedArticle(String title,
         return this;
     }
 
+    public String url() {
+        return url.replace("/", "%2F");
+    }
+
     private String compareKey() {
         return url.toLowerCase();
     }

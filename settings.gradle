@@ -27,7 +27,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         libs {
-            library('lombok', 'org.projectlombok', 'lombok').version('1.18.24')
+            library('lombok', 'org.projectlombok', 'lombok').version('1.18.32')
 
             library('spark', 'com.sparkjava', 'spark-core').version('2.9.3')
 

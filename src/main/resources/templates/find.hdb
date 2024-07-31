@@ -16,10 +16,18 @@
     </div>
   </form>
 <ul>
-  {{#each articles}}
-    <h3><a href="/article/{{url}}">{{title}}</a></h3>
-    {{{summary}}}
-  {{/each}}
+  {{#if searchArticles}}
+      {{#each searchArticles}}
+          <h3><a href="/article/{{url}}">{{title}}</a></h3>
+          {{{summary}}}
+      {{/each}}
+  {{/if}}
+  {{#if indexArticles}}
+      {{#each indexArticles}}
+         <h3><a href="/article/{{url}}">{{title}}</a></h3>
+         {{{summary}}}
+      {{/each}}
+  {{/if}}
 
   {{#if nextPrefix}}
     <a href="?start={{nextPrefix}}">Next</a>
